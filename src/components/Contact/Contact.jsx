@@ -2,7 +2,8 @@ import { SlUser } from "react-icons/sl";
 import { FaPhoneAlt } from "react-icons/fa";
 import css from '../Contact/Contact.module.css'
 
-export const Contact = ({ data }) => {
+export const Contact = ({ data, handlerButton }) => {
+
     return (
         <div>
             {data.map((item, index) => (
@@ -18,7 +19,7 @@ export const Contact = ({ data }) => {
                         </div>
                     </div>
                     <div>
-                        <button className={css.contactsBtn}>Delete</button>
+                        <button id={item.id} onClick={handlerButton} className={css.contactsBtn}>Delete</button>
                     </div>
                 </div>
             ))}
